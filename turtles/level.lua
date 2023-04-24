@@ -1,17 +1,55 @@
-a=print b=write c=tonumber d=read e=turtle.dig f=turtle.forward g=turtle.turnLeft h=turtle.turnRight i=function () local j,k=turtle.inspect() return j end l=function () for m=1, 50 do if i() then e() else break end end end
-a "level"
-b "x:"
-x=c(d())
-b "y:"
-y=c(d())
-for X=1,x do
-  for Y=1,y do
-    l()
-    f()
-  end
-  if X%2==1 then
-    g() l() f() l()
-  else
-    g() h() f() h()
+get_valid_number = function (name, validation_error_message) -- shorthand
+  local num = nil
+  while true do
+      write(name)
+      write ": "
+      num = tonumber(read())
+      if num ~= nil then
+          return num
+      end
+      print(validation_error_message)
   end
 end
+
+if turtle then
+  tf = turtle.forward
+  td = turtle.dig
+  ti = turtle.inspect
+  tD = function (max)
+    max = max or 100
+    for i=1, max do
+      td()
+      if ti() then
+        return
+      end
+    end
+  end
+  tl = turtle.turnLeft
+  tr = turtle.turnRight
+else
+  error "This script is designed for turtles"
+end
+
+local _bad_num = "Please enter a valid number"
+
+print "Leveling Script for Digging Turtles"
+x = get_valid_number("Spaces forrward", _bad_num)
+y = get_valid_number("Spaces left", _bad_num)
+
+for X=1, x do
+  for Y=1, y do
+    tD()
+    tf()
+  end
+  if X%2==1 then
+    tl()
+    tD()
+    tl()
+  else
+    tr()
+    tD()
+    tr()
+  end
+end
+
+print "Complete"
