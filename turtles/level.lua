@@ -19,7 +19,7 @@ if turtle then
     max = max or 100
     for i=1, max do
       td()
-      if ti() then
+      if ti()==false then
         return
       end
     end
