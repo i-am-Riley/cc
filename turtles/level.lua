@@ -33,8 +33,8 @@ end
 local _bad_num = "Please enter a valid number"
 
 print "Leveling Script for Digging Turtles"
-x = get_valid_number("Spaces forward", _bad_num)
-y = get_valid_number("Spaces left", _bad_num)
+y = get_valid_number("Spaces forward", _bad_num)
+x = get_valid_number("Spaces left", _bad_num)
 
 for X=1, x do
   for Y=1, y do
@@ -43,8 +43,7 @@ for X=1, x do
   end
   Z = X%2==1 and tl or tr
   Z()
-  tD()
-  tf()
+  if X~=x then tD() tf() end
   Z()
 end
 
