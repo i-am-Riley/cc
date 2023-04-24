@@ -1,4 +1,4 @@
-a=print b=write c=tonumber d=read e=turtle.dig f=turtle.forward g=turtle.turnLeft h=turtle.turnRight i=function () local j,k=turtle.inspect() return j end l=function () for m=1, 50 do if i() then e() else break end end
+a=print b=write c=tonumber d=read e=turtle.dig f=turtle.forward g=turtle.turnLeft h=turtle.turnRight i=function () local j,k=turtle.inspect() return j end l=function () for m=1, 50 do if i() then e() else break end end end
 a "level"
 b "x:"
 x=c(d())
