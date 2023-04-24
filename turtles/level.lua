@@ -41,15 +41,11 @@ for X=1, x do
     tD()
     tf()
   end
-  if X%2==1 then
-    tl()
-    tD()
-    tl()
-  else
-    tr()
-    tD()
-    tr()
-  end
+  Z = X%2==1 and tl or tr
+  Z()
+  tD()
+  tf()
+  Z()
 end
 
 print "Complete"
