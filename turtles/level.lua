@@ -33,7 +33,7 @@ end
 local _bad_num = "Please enter a valid number"
 
 print "Leveling Script for Digging Turtles"
-x = get_valid_number("Spaces forrward", _bad_num)
+x = get_valid_number("Spaces forward", _bad_num)
 y = get_valid_number("Spaces left", _bad_num)
 
 for X=1, x do
